@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brothers Corner</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #a1a1a1;
+        }
+
+        header {
+            background-color: rgb(211, 225, 226);
+            color: #fff;
+            padding: 10px 0;
+            display: flex;
+        }
+
+        header .font{
+            justify-content: center;
+            display: flex;
+
+        }
+        
+        .hiden-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #555;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+    nav a {
+        text-decoration: none;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .konten {
+        cursor: pointer;
+        display: block;
+    }
+
+    #searchinput {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        margin: 100px; 
+        align-items: center;
+        grid-gap: 30px;
+    }
+
+    img {
+        object-fit: cover;
+    }
+
+    .grid > article {
+        box-shadow: 5px 5px 5px 0px black;
+        border-radius: 30px;
+        text-align: center;
+        background: whitesmoke;
+        width: 200px;
+        transition: transform;
+    }
+
+    .grid > article > img {
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    .grid > article:hover {
+        transform: scale(1.2);
+    }
+
+    @media (max-width:1000px){
+        .grid {
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    @media (max-width:800px){
+        .grid {
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+
+    .map-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 35px;
+    }
+
+    .map-caption {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .text-container {
+        flex: 1;
+    }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <section class="logo">
+            <img src="BCC-removebg-preview.png" alt="ayam" width="100">
+        </section>
+        <section class="font">
+            <center><h1>Brothers Corner</h1></center>
+        </section>
+        
+    </header>
+    
+    <nav>
+        <i class="fa-duotone fa-bars" style="--fa-primary-color: #000000; --fa-secondary-color: #000000;"></i>
+        <ul>
+            <li><a href="#Beranda" onclick="showContent('Beranda')">Beranda</a></li>
+            <li><a href="#Menu" onclick="showContent('Menu')">Menu</a></li>
+            <li><a href="#Kontak" onclick="showContent('Kontak')">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <div id="Beranda" class="container">
+        <div class="map-container">
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.170450594135!2d105.23577437401374!3d-5.390976353886949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40db4e7a2c7027%3A0x886cf47e569c2c1c!2sBrothers%20Corner!5e0!3m2!1sid!2sid!4v1701706437843!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width="600" height="450" frameborder="0" style="border: 0;" allowfullscreen></iframe>
+            </div>
+            <div class="text-container">
+                <h1>Brothers Corner</h1>
+                <p>Angkringan Brothers Corner. Tempat yang sederhana ini telah menjadi favorit di kalangan penduduk setempat dari yang tua sampai yang muda sebagai tempat untuk havefun.Salah satu daya tarik Angkringan Brothers Corner adalah harganya yang terjangkau. Harga-harga disesuaikan agar terjangkau oleh semua kalangan, mulai dari pelajar hingga profesional, sehingga semua orang dapat menikmati hidangan lezat tanpa menguras kantong. Komitmen terhadap aksesibilitas membuat tempat ini menjadi tempat yang dicintai oleh banyak orang.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="Menu" class="container">
+        <center><h1>MENU</h1></center>
+        <input type="text" id="searchInput" placeholder="Cari menu">
+        <button onclick="searchMenu()">Cari</button>
+        <label for="searchInput"></label>
+        <main class="grid">
+            <article class="content">
+                <img src="Bakso bakar.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Bakso bakar</h2>
+                    <p>Rp.1.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Sosis bakar.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Sosis bakar</h2>
+                    <p>Rp.1.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Telor gulung.jpeg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Telor Gulung</h2>
+                    <p>Rp.1.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Nasi Kucing.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Nasi Kucing</h2>
+                    <p>Rp.5.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Nasi goreng.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Nasi goreng</h2>
+                    <p>Rp.13.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Pisang Keju.png" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Pisang Keju</h2>
+                    <p>Rp.8.000</p>
+                </div>
+            </article>
+            <article>
+                <img src="Roti bakar.jpeg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Roti bakar</h2>
+                    <p>Rp.10.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Mie rbs.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Mie rebus</h2>
+                    <p>Rp.5.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Mie grg.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Mie goreng</h2>
+                    <p>Rp.5.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Mie rbs tlr.webp" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Mie rebus + Telor</h2>
+                    <p>Rp.9.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Mie grg tlr.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Mie goreng + Telor</h2>
+                    <p>Rp.9.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Mineral.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Air Mineral</h2>
+                    <p>Rp.4.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Kopi robusta.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>kopi hitam</h2>
+                    <p>Rp.5.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Kopi susu.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Kopi susu</h2>
+                    <p>Rp.5.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Teh.jpeg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Teh Es/Panas</h2>
+                    <p>Rp.3.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Teh tarik.jpeg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Teh tarik</h2>
+                    <p>Rp.5.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Jus jeruk.jpeg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Jus jeruk</h2>
+                    <p>Rp.7.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Jus mangga.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Jus mangga</h2>
+                    <p>Rp.7.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Green.jpe" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Es Greentea</h2>
+                    <p>Rp.8.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Taro.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Es Taro</h2>
+                    <p>Rp.8.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Coklat.jpeg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Es Coklat</h2>
+                    <p>Rp.8.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Susu.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Es Susu</h2>
+                    <p>Rp.8.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Stroberi.jpeg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Es Strawberry</h2>
+                    <p>Rp.8.000</p>
+                </div>
+            </article>
+            <article class="content">
+                <img src="Josu.jpg" width="200px" height="200px">
+                <div class="konten">
+                    <h2>Es Josu</h2>
+                    <p>Rp.7.000</p>
+                </div>
+            </article>
+    </div><br>
+
+    <div id="Kontak" class="container">
+        <center><h1>KONTAK</h1></center>
+        <center><h1>Whatsapp : 0822#######</h1></center>
+        <center><h1>Instagram : @Brothers Corner</h1></center><br><br>
+        <center><h1>Terima kasih</h1></center>
+    </div>
+
+    <script>
+        function showContent(page) {
+            document.getElementById('Beranda').style.display = 'none';
+            document.getElementById('Menu').style.display = 'none';
+            document.getElementById('Kontak').style.display = 'none';
+
+            document.getElementById(page).style.display = 'block';
+        }
+
+
+        function searchMenu() {
+    
+        var searchValue = document.getElementById('searchInput').value.toLowerCase();
+
+        var menuElements = document.getElementsByClassName('konten');
+
+        for (var i = 0; i < menuElements.length; i++) {
+            var menuName = menuElements[i].getElementsByTagName('h2')[0].innerText.toLowerCase();
+
+            if (menuName.includes(searchValue)) {
+
+                menuElements[i].style.display = 'block';
+            } else {
+
+                menuElements[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+    </script>
+
+</body>
+</html>
